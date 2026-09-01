@@ -277,6 +277,11 @@ public partial class AllConfig : ObservableObject
     public TpConfig TpConfig { get; set; } = new();
 
     /// <summary>
+    /// 快速拖动传送（TpTaskFastDrag）专属配置。
+    /// </summary>
+    public TpTaskFastDragConfig TpTaskFastDragConfig { get; set; } = new();
+
+    /// <summary>
     /// 开发者配置
     /// </summary>
     public DevConfig DevConfig { get; set; } = new();
@@ -311,19 +316,39 @@ public partial class AllConfig : ObservableObject
         }
 
         NotificationConfig.PropertyChanged += OnNotificationPropertyChanged;
-        _changeTracker = new ConfigChangeTracker(OnConfigChanged);
-        _changeTracker.Track(this);
+        KeyBindingsConfig.PropertyChanged += OnAnyPropertyChanged;
+        AutoPickConfig.PropertyChanged += OnAnyPropertyChanged;
+        AutoSkipConfig.PropertyChanged += OnAnyPropertyChanged;
+        AutoFishingConfig.PropertyChanged += OnAnyPropertyChanged;
+        QuickTeleportConfig.PropertyChanged += OnAnyPropertyChanged;
+        MacroConfig.PropertyChanged += OnAnyPropertyChanged;
+        HotKeyConfig.PropertyChanged += OnAnyPropertyChanged;
+        AutoWoodConfig.PropertyChanged += OnAnyPropertyChanged;
+        AutoFightConfig.PropertyChanged += OnAnyPropertyChanged;
+        AutoDomainConfig.PropertyChanged += OnAnyPropertyChanged;
+        AutoBossConfig.PropertyChanged += OnAnyPropertyChanged;
+        AutoStygianOnslaughtConfig.PropertyChanged += OnAnyPropertyChanged;
+        AutoArtifactSalvageConfig.PropertyChanged += OnAnyPropertyChanged;
+        AutoRedeemCodeConfig.PropertyChanged += OnAnyPropertyChanged;
+        AutoEatConfig.PropertyChanged += OnAnyPropertyChanged;
+        AutoLeyLineOutcropConfig.PropertyChanged += OnAnyPropertyChanged;
+        AutoCookConfig.PropertyChanged += OnAnyPropertyChanged;
+        MapMaskConfig.PropertyChanged += OnAnyPropertyChanged;
+        AutoMusicGameConfig.PropertyChanged += OnAnyPropertyChanged;
+        TpConfig.PropertyChanged += OnAnyPropertyChanged;
+        TpTaskFastDragConfig.PropertyChanged += OnAnyPropertyChanged;
+        MusicConfig.PropertyChanged += OnAnyPropertyChanged;
+        ScriptConfig.PropertyChanged += OnAnyPropertyChanged;
+        PathingConditionConfig.PropertyChanged += OnAnyPropertyChanged;
+        DevConfig.PropertyChanged += OnAnyPropertyChanged;
+        HardwareAccelerationConfig.PropertyChanged += OnAnyPropertyChanged;
+        ChildSessionConfig.PropertyChanged += OnAnyPropertyChanged;
+        SkillCdConfig.PropertyChanged += OnAnyPropertyChanged;
     }
 
-    /// <param name="sender">触发变更的对象（某个子配置、嵌套对象或集合）</param>
-    private void OnConfigChanged(object sender)
+    public void OnAnyPropertyChanged(object? sender, EventArgs args)
     {
-        // 实时触发器每帧读取配置，不需要在这里通知；只有切换遮罩显示相关的开关时清掉旧的识别结果
-        if (sender is MaskWindowConfig)
-        {
-            TaskContext.Instance().Runtime?.MaskWindowDrawingBoard.ClearAll();
-        }
-
+        GameTaskManager.RefreshTriggerConfigs();
         OnAnyChangedAction?.Invoke();
     }
 
