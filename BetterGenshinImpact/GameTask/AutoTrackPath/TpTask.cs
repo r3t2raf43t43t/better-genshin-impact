@@ -3740,7 +3740,7 @@ public class TpTask
                 await Delay(GetExperimentalOperationDelay(50), ct);
                 await WaitForTemplateAreaSelectionApplied(areaName);
                 RememberSuccessfulAreaSwitch(areaName);
-                Logger.LogInformation("切换到区域（模板匹配）：{Country}", areaName);
+                Logger.LogInformation("切换到区域：{Country}", areaName);
                 return true;
             }
 
