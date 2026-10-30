@@ -61,12 +61,12 @@ public class TpTask
     private const double DefaultDisplayTpPointZoomLevel = 4.4; // 传送点显示时的默认地图比例
     private const double MoonCanonDisplayTpPointZoomLevel = 3.0;
     private const int DefaultBigMapOpenTimeoutMs = 5000;
-    private const int MoonCanonBigMapOpenTimeoutMs = 8000;
+    private const int MoonCanonBigMapOpenTimeoutMs = 10000;
     private const int UiRecognitionPollIntervalMs = 80;
     private const int BigMapOpenCheckIntervalMs = UiRecognitionPollIntervalMs;
-    private const double TeleportMaxZoomLevel = 6.0;
+    private const double TeleportMaxZoomLevel = 3.6;
     private const double TeleportFinalZoomDistanceFactor = 36d;
-    private const double MinTeleportZoomLevel = 1.0;
+    private const double MinTeleportZoomLevel = 1.1;
     private const int MaxMapZoomWheelBatchNotches = 16;
     private const int MapZoomWheelSignForZoomLevelIncrease = -1;
     private const int MapZoomWheelBurstIntervalMs = 15;
