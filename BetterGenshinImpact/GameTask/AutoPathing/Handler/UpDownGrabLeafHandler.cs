@@ -1,4 +1,4 @@
-﻿using BetterGenshinImpact.Core.Input;
+using BetterGenshinImpact.Core.Input;
 using System;
 using System.Threading;
 using System.Threading.Tasks;
@@ -17,10 +17,10 @@ namespace BetterGenshinImpact.GameTask.AutoPathing.Handler;
 /// </summary>
 public class UpDownGrabLeafHandler : IActionHandler
 {
-    private const int InitialVerticalMovement = 1000;
+    private const int InitialVerticalMovement = 600;
     private const int MovementDirectionChangeInterval = 10;
     private const int TotalCycles = 40;
-    private const int DelayBetweenCycles = 100;
+    private const int DelayBetweenCycles = 200;
     private const int ConsecutiveDetectionsRequired = 2;
     private const int DetectionDelayMs = 150;
     
