@@ -62,9 +62,9 @@ public class TpTaskOfficial
     private const int MoonCanonBigMapOpenTimeoutMs = 8000;
     private const int UiRecognitionPollIntervalMs = 80;
     private const int BigMapOpenCheckIntervalMs = UiRecognitionPollIntervalMs;
-    private const double TeleportMaxZoomLevel = 6.0;
+    private const double TeleportMaxZoomLevel = 4.2;
     private const double TeleportFinalZoomDistanceFactor = 36d;
-    private const double MinTeleportZoomLevel = 1.0;
+    private const double MinTeleportZoomLevel = 1.1;
     private const int MaxMapZoomWheelBatchNotches = 16;
     private const int MapZoomWheelSignForZoomLevelIncrease = -1;
     private const int MapZoomWheelBurstIntervalMs = 15;
