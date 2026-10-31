@@ -2,7 +2,7 @@
 using BetterGenshinImpact.GameTask.AutoGeniusInvokation.Exception;
 
 using BetterGenshinImpact.View;
-using BetterGenshinImpact.View.Drawable;
+
 using Microsoft.Extensions.Logging;
 using System;
 using System.Threading;
