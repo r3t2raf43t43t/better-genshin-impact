@@ -17,7 +17,7 @@ namespace BetterGenshinImpact.GameTask.AutoPathing.Handler;
 /// </summary>
 public class UpDownGrabLeafHandler : IActionHandler
 {
-    private const int InitialVerticalMovement = 600;
+    private const int InitialVerticalMovement = 750;
     private const int MovementDirectionChangeInterval = 10;
     private const int TotalCycles = 40;
     private const int DelayBetweenCycles = 200;
