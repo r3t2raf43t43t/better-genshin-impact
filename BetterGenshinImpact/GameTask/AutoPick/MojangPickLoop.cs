@@ -535,7 +535,6 @@ public sealed class MojangPickLoop
 
         if (LogLevel >= 2 || ThrottleBlockedLog())
         {
-            _logger.LogInformation("无有效结果，不交互");
         }
     }
 
@@ -551,7 +550,6 @@ public sealed class MojangPickLoop
 
         if (LogLevel >= 2 || ThrottleBlockedLog())
         {
-            _logger.LogInformation("识别到{Name}，不交互", r.Name);
             if (LogLevel >= 2)
             {
                 LogDetail(r);
