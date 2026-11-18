@@ -69,7 +69,6 @@ public class TpTask
     private const double MinTeleportZoomLevel = 1.0;
     private const double ExperimentalTeyvatFinalDragZoomCap = 4.0;
     private const double ExperimentalFinalDragZoomMargin = 0.10; // 1080p 滑轨上约 3 像素
-    private const double MinTeleportZoomLevel = 1.0;
     private const int MaxMapZoomWheelBatchNotches = 16;
     private const int MapZoomWheelSignForZoomLevelIncrease = -1;
     private const int MapZoomWheelBurstIntervalMs = 15;
