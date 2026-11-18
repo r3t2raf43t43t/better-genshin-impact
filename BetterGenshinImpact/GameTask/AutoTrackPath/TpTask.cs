@@ -64,15 +64,12 @@ public class TpTask
     private const int MoonCanonBigMapOpenTimeoutMs = 10000;
     private const int UiRecognitionPollIntervalMs = 80;
     private const int BigMapOpenCheckIntervalMs = UiRecognitionPollIntervalMs;
-    private const double TeleportMaxZoomLevel = 3.6;
+    private const double TeleportMaxZoomLevel = 6.0;
     private const double TeleportFinalZoomDistanceFactor = 36d;
-<<<<<<< HEAD
     private const double MinTeleportZoomLevel = 1.0;
     private const double ExperimentalTeyvatFinalDragZoomCap = 4.0;
     private const double ExperimentalFinalDragZoomMargin = 0.10; // 1080p 滑轨上约 3 像素
-=======
-    private const double MinTeleportZoomLevel = 1.1;
->>>>>>> parent of 379d0b0f (chore(mno): 集成 babalae #3697)
+    private const double MinTeleportZoomLevel = 1.0;
     private const int MaxMapZoomWheelBatchNotches = 16;
     private const int MapZoomWheelSignForZoomLevelIncrease = -1;
     private const int MapZoomWheelBurstIntervalMs = 15;
