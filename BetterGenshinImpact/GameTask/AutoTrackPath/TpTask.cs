@@ -61,14 +61,18 @@ public class TpTask
     private const double DefaultDisplayTpPointZoomLevel = 4.4; // 传送点显示时的默认地图比例
     private const double MoonCanonDisplayTpPointZoomLevel = 3.0;
     private const int DefaultBigMapOpenTimeoutMs = 5000;
-    private const int MoonCanonBigMapOpenTimeoutMs = 8000;
+    private const int MoonCanonBigMapOpenTimeoutMs = 10000;
     private const int UiRecognitionPollIntervalMs = 80;
     private const int BigMapOpenCheckIntervalMs = UiRecognitionPollIntervalMs;
-    private const double TeleportMaxZoomLevel = 6.0;
+    private const double TeleportMaxZoomLevel = 3.6;
     private const double TeleportFinalZoomDistanceFactor = 36d;
+<<<<<<< HEAD
     private const double MinTeleportZoomLevel = 1.0;
     private const double ExperimentalTeyvatFinalDragZoomCap = 4.0;
     private const double ExperimentalFinalDragZoomMargin = 0.10; // 1080p 滑轨上约 3 像素
+=======
+    private const double MinTeleportZoomLevel = 1.1;
+>>>>>>> parent of 379d0b0f (chore(mno): 集成 babalae #3697)
     private const int MaxMapZoomWheelBatchNotches = 16;
     private const int MapZoomWheelSignForZoomLevelIncrease = -1;
     private const int MapZoomWheelBurstIntervalMs = 15;
@@ -2076,16 +2080,7 @@ public class TpTask
                     unavailablePromptCount,
                     e.Message);
             }
-            catch (TeleportPanelNotOpenedException e)
-            {
-                // 同一视野内点击后未出现面板，重试只会重复点击同一位置。
-                
-                // 抛出异常按下 ESC 退出大地图，避免影响后续路径追踪任务
-                InputHub.Foreground.Keyboard.KeyPress(User32.VK.VK_ESCAPE);
-                await Delay(300, ct);
-                
-                throw;
-            }
+
             catch (TpPointNotActivate e)
             {
                 // 未激活点位的详情面板会遮挡后续地图操作，重试前先关闭。
@@ -3767,7 +3762,7 @@ public class TpTask
                 await Delay(GetExperimentalOperationDelay(50), ct);
                 await WaitForTemplateAreaSelectionApplied(areaName);
                 RememberSuccessfulAreaSwitch(areaName);
-                Logger.LogInformation("切换到区域（模板匹配）：{Country}", areaName);
+                Logger.LogInformation("切换到区域：{Country}", areaName);
                 return true;
             }
 
